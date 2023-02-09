@@ -1,5 +1,5 @@
 # Season_of_Code
-Projects made during Season of Code organised by sds.labs 
+Projects made during Season of Code organised by sds.labs of IIT Roorkee
 
 Members 
 ~ Vineet Kumar : 22114107 
