@@ -1,0 +1,21 @@
+import PyPDF2
+
+def search_pdf(pdf_file, keyword):
+    pdf_reader = PyPDF2.PdfFileReader(pdf_file)
+    page_numbers = []
+    
+    for page_num in range(pdf_reader.numPages):
+        page = pdf_reader.getPage(page_num)
+        text = page.extractText()
+        if keyword in text:
+            page_numbers.append(page_num + 1)
+    
+    if page_numbers:
+        return "Keyword '{}' found on page(s) {}".format(keyword, ', '.join(map(str, page_numbers)))
+    else:
+        return "Keyword '{}' not found in the PDF".format(keyword)
+
+pdf_file = open("sample.pdf", "rb")
+keyword = "example"
+print(search_pdf(pdf_file, keyword))
+pdf_file.close()
